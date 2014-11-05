@@ -93,5 +93,7 @@ $filetypes = array(
 	"vhd" => "drive",
 	"vmdk" => "drive",
 	"wim" => "disk",
-	"vfd" => "drive_disk"
+	"vfd" => "drive_disk",
+	"jpeg" => "picture",
+	"mo3" => "music"
 );
