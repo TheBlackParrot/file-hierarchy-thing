@@ -2,12 +2,21 @@
 
 <head>
 	<?php
-		$root = "/srv/http/files/files/";
+		$root = "/srv/http/old/files/files/";
 		$rel_root = "files/";
 		if(!isset($_GET['dir']))
 			$dir = "";
 		else
 			$dir = urldecode(htmlspecialchars($_GET['dir'])) . "/";
+
+
+		$realBase = realpath($root);
+
+		$userpath = $root . $_GET['dir'];
+		$realUserPath = realpath($userpath);
+
+		if($realUserPath === false || strpos($realUserPath,$realBase) !== 0)
+		    $dir = "";
 
 		include "./filetypes.php";
 
